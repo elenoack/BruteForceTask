@@ -1,3 +1,10 @@
+//
+//  SceneDelegate.swift
+//  Pr2503
+//
+//  Created by Elena Noack on 11.07.22.
+//
+
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
