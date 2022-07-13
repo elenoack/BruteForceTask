@@ -94,7 +94,7 @@ class ViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.clear()
+            self.clean()
         }
     }
 }
@@ -140,11 +140,11 @@ extension ViewController {
         DispatchQueue.main.async(execute: resultPasswordWorkItem)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
-            self.clear()
+            self.clean()
         }
     }
     
-    func clear() {
+    func clean() {
         self.imageView.image = UIImage(named: Strings.imageSafeDeposit)
         self.label.text = ""
         passwordTextField.text = nil
