@@ -5,7 +5,7 @@
 //  Created by Elena Noack on 11.07.22.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     var digits:      String { return "0123456789" }
