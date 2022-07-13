@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var changeColorButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var checkPasswordButton: UIButton!
-    @IBOutlet weak var resertButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -40,6 +40,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupButton()
     }
     
     //MARK: - Settings
@@ -48,6 +49,18 @@ class ViewController: UIViewController {
         overrideUserInterfaceStyle = .light
         passwordTextField.delegate = self
         activityIndicator.isHidden = true
+    }
+    
+    private func setupButton() {
+        addStyle([
+            checkPasswordButton,
+            changeColorButton,
+            resetButton
+        ])
+        
+        checkPasswordButton.tintColor = .orange
+        changeColorButton.tintColor = .systemBlue
+        resetButton.tintColor = .systemBlue
     }
     
     //MARK: - Actions
@@ -92,17 +105,8 @@ extension ViewController {
     
     func bruteForce(passwordToUnlock: String) {
         let ALLOWED_CHARACTERS: [String] = String().printable.map { String($0) }
-        
+        isWork = true
         var password: String = ""
-        
-        let easyPasswordWorkItem = DispatchWorkItem {
-            self.label.textColor = .systemPink
-            self.label.text = Strings.labelPasswordEasyGuess + "\(password)!"
-            self.imageView.image = UIImage(named: Strings.imageSafeDepositOpen)
-            self.passwordTextField.isSecureTextEntry = false
-            self.activityIndicator.isHidden = true
-            self.activityIndicator.stopAnimating()
-        }
         
         let findPasswordWorkItem = DispatchWorkItem {
             self.label.textColor = .systemPink
@@ -112,6 +116,15 @@ extension ViewController {
             self.activityIndicator.startAnimating()
         }
         
+        let resultPasswordWorkItem = DispatchWorkItem {
+            self.label.textColor = .systemPink
+            self.label.text = Strings.labelPasswordEasyGuess + "\(password)!"
+            self.imageView.image = UIImage(named: Strings.imageSafeDepositOpen)
+            self.passwordTextField.isSecureTextEntry = false
+            self.activityIndicator.isHidden = true
+            self.activityIndicator.stopAnimating()
+        }
+        
         // Will strangely ends at 0000 instead of ~~~
         while password != passwordToUnlock { // Increase MAXIMUM_PASSWORD_SIZE value for more
             password = generateBruteForce(password, fromArray: ALLOWED_CHARACTERS)
@@ -119,15 +132,12 @@ extension ViewController {
             if isWork {
                 DispatchQueue.main.async(execute: findPasswordWorkItem)
             } else {
-                findPasswordWorkItem.cancel()
+                break
             }
+            print(password)
         }
         
-        if isWork {
-            DispatchQueue.main.async(execute: easyPasswordWorkItem)
-        } else {
-            easyPasswordWorkItem.cancel()
-        }
+        DispatchQueue.main.async(execute: resultPasswordWorkItem)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
             self.clear()
@@ -193,6 +203,7 @@ extension ViewController: UITextFieldDelegate {
 }
 
 // MARK: - Constants
+
 extension ViewController {
     
     enum Strings {
