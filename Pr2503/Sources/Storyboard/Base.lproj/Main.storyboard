@@ -17,30 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-cd-RKK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-cd-RKK">
                                 <rect key="frame" x="20" y="112" width="134" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="YEw-Y5-fCx"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemBlueColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Сhange Color"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Сhange Color" cornerStyle="large"/>
                                 <connections>
                                     <action selector="onBut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XD4-sb-XPE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuG-LW-89G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuG-LW-89G">
                                 <rect key="frame" x="236.5" y="542.5" width="157.5" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Rn0-dt-adc"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Get Reset"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Get Reset" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
-                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o13-f1-Mq4"/>
                                 </connections>
@@ -54,18 +48,16 @@
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JZ-uF-Yof">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JZ-uF-Yof">
                                 <rect key="frame" x="20" y="542.5" width="194.5" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="rgJ-wu-P55"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Check Password"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Check Password" cornerStyle="large" titleAlignment="leading">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <color key="baseBackgroundColor" systemColor="systemOrangeColor"/>
-                                </buttonConfiguration>
+                                <state key="normal" title="Check Password">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
                                 <connections>
                                     <action selector="checkPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaL-V7-Thx"/>
                                 </connections>
@@ -115,7 +107,7 @@
                             <constraint firstItem="8JZ-uF-Yof" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0u4-8U-ObQ"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="top" secondItem="d9p-15-uGh" secondAttribute="bottom" constant="12" id="2ky-ae-kh4"/>
                             <constraint firstItem="svh-V9-hDn" firstAttribute="top" secondItem="uYJ-8j-jMl" secondAttribute="bottom" constant="20" id="3te-rl-0TD"/>
-                            <constraint firstItem="fLa-hh-kzr" firstAttribute="trailing" secondItem="uYJ-8j-jMl" secondAttribute="trailing" id="6K9-mG-qaU"/>
+                            <constraint firstItem="fLa-hh-kzr" firstAttribute="right" secondItem="uYJ-8j-jMl" secondAttribute="right" id="6K9-mG-qaU"/>
                             <constraint firstItem="d9p-15-uGh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="76b-f5-ypD"/>
                             <constraint firstItem="X4T-3E-iaK" firstAttribute="top" secondItem="3g4-cd-RKK" secondAttribute="bottom" id="8e3-gx-7Fx"/>
                             <constraint firstItem="Qri-Ko-fpO" firstAttribute="top" secondItem="fLa-hh-kzr" secondAttribute="bottom" constant="20" id="AQD-Td-xQC"/>
@@ -127,7 +119,7 @@
                             <constraint firstItem="8JZ-uF-Yof" firstAttribute="top" secondItem="svh-V9-hDn" secondAttribute="bottom" constant="20" id="GTf-qT-g7W"/>
                             <constraint firstItem="uuG-LW-89G" firstAttribute="top" secondItem="fLa-hh-kzr" secondAttribute="bottom" constant="20" id="HXr-bG-f4s"/>
                             <constraint firstItem="d9p-15-uGh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JCU-3I-tuY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fLa-hh-kzr" secondAttribute="trailing" constant="20" id="MHE-fM-kqX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="right" secondItem="fLa-hh-kzr" secondAttribute="right" constant="20" id="MHE-fM-kqX"/>
                             <constraint firstItem="Qri-Ko-fpO" firstAttribute="leading" secondItem="8JZ-uF-Yof" secondAttribute="trailing" id="Nva-fW-7EK"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SHj-Ur-Fkz"/>
                             <constraint firstItem="uuG-LW-89G" firstAttribute="leading" secondItem="Qri-Ko-fpO" secondAttribute="trailing" id="SMo-0h-Cqs"/>
@@ -149,7 +141,7 @@
                         <outlet property="imageView" destination="X4T-3E-iaK" id="MXb-Vz-uv5"/>
                         <outlet property="label" destination="uYJ-8j-jMl" id="ftf-6g-WQU"/>
                         <outlet property="passwordTextField" destination="fLa-hh-kzr" id="C2n-EA-fIh"/>
-                        <outlet property="resertButton" destination="uuG-LW-89G" id="7zi-J8-g5O"/>
+                        <outlet property="resetButton" destination="uuG-LW-89G" id="7zi-J8-g5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -167,9 +159,6 @@
     <resources>
         <image name="icon" width="512" height="512"/>
         <image name="safeDeposit" width="1023" height="1023"/>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
