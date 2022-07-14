@@ -22,13 +22,9 @@ class ViewController: UIViewController {
     
     var isBlack: Bool = false {
         didSet {
-            if isBlack {
-                self.view.backgroundColor = .darkGray
-            } else {
-                self.view.backgroundColor = .white
+            self.view.backgroundColor = isBlack ? .darkGray : .white
             }
         }
-    }
     
     var password = String()
     private var hasPasswordData: Bool { !(passwordTextField?.text).isEmptyOrNil }
