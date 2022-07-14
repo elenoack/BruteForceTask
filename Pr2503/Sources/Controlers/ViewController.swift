@@ -137,7 +137,9 @@ extension ViewController {
             print(password)
         }
         
+        if isWork {
         DispatchQueue.main.async(execute: resultPasswordWorkItem)
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
             self.clean()
